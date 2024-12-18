@@ -1,0 +1,18 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  namespace: nitish
+  name: test
+spec:
+  source:
+    type: Git
+    git:
+      uri: "https://github.com/nitishnigam1989/deploy-python-openshift-tutorial.git"
+      ref: master
+    contextDir: /
+  strategy:
+    type: Docker
+  output:
+    to:
+      kind: ImageStreamTag
+      name: nitish:1.0
