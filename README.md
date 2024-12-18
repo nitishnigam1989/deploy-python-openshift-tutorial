@@ -20,3 +20,7 @@ oc start-build result
 oc get build
 
 ## Describe Build
+oc describe build <build_name>
+
+## Create Deployment
+oc apply -f openshift/deployment.yaml

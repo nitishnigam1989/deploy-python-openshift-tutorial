@@ -1,0 +1,29 @@
+kind: DeploymentConfig
+apiVersion: apps.openshift.io/v1
+metadata:
+  name: test
+  labels:
+    app: hello-world
+spec:
+  triggers:
+  - type: ConfigChange 
+  - imageChangeParams:
+      automatic: true
+      containerNames:
+      - test
+      from:
+        kind: ImageStreamTag
+        name: nitish:1.0
+    type: ImageChange
+  replicas: 1
+  selector:
+    app: test
+  template:
+    metadata:
+      labels:
+        app: test
+    spec:
+      #securityContext:
+      #  runAsUser: 1001
+      containers:
+        - name: test

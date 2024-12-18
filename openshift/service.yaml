@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: test
+  labels:
+    app: hello-world
+spec:
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+  selector:
+    app: test
+  type: ClusterIP

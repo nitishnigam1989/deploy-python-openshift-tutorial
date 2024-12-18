@@ -3,6 +3,8 @@ kind: BuildConfig
 metadata:
   namespace: nitish
   name: test
+  labels:
+    app: hello-world
 spec:
   source:
     type: Git

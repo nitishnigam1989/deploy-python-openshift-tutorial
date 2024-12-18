@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: nitish
+  name: test
+  labels:
+    app: hello-world
+spec:
+  selector:
+    matchLabels:
+      app: test
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: test
+    spec:
+      containers:
+        - name: test
+          image: >-
+            image-registry.openshift-image-registry.svc:5000/nitish/nitish:1.0
+          ports:
+            - containerPort: 5000
+              protocol: TCP
