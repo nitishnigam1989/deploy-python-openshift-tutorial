@@ -2,7 +2,7 @@
 
 
 ## Login as developer
-oc login -u developer https://api.crc.testing:6443
+oc login -u kubeadmin <openshift_url>
 
 ## Create a new project
 oc new-project nitish
@@ -14,7 +14,7 @@ oc import-image nitish --from=quay.io/tdonohue/python-hello-world:latest --confi
 oc apply -f openshift/build-config.yaml -n nitish
 
 ##  Run Build
-oc start-build result
+oc start-build test
 
 ## Get Builds
 oc get build
