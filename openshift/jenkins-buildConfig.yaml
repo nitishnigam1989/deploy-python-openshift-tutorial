@@ -1,0 +1,14 @@
+kind: "BuildConfig"
+apiVersion: "build.openshift.io/v1"
+metadata:
+  name: "hello-world-pipeline"
+spec:
+  source:
+    #contextDir: deployment/openshift
+    git:
+      uri: "https://github.com/nitishnigam1989/deploy-python-openshift-tutorial.git"
+      ref: "master"
+  strategy:
+    jenkinsPipelineStrategy:
+      jenkinsfilePath: Jenkinsfile
+    type: JenkinsPipeline
