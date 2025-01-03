@@ -11,7 +11,7 @@ spec:
   - name: git-url
     value: https://github.com/nitishnigam1989/deploy-python-openshift-tutorial
   - name: IMAGE
-    value: image-registry.openshift-image-registry.svc:5000/nitish/nitish
+    value: image-registry.openshift-image-registry.svc:5000/$(context.pipelineRun.namespace)/hello-world
   - name: git-revision
     value: master
   workspaces:
