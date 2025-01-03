@@ -33,11 +33,11 @@ spec:
     params:
     - name: URL
       value: $(params.git-url)
-    - name: subdirectory
+    - name: SUBDIRECTORY
       value: ""
-    - name: deleteExisting
+    - name: DELETE_EXISTING
       value: "true"
-    - name: revision
+    - name: REVISION
       value: $(params.git-revision)
   - name: build-image
     taskRef:
