@@ -66,7 +66,7 @@ spec:
         - name: name
           value: git-clone
         - name: namespace
-          namespace: openshift-pipelines
+          value: openshift-pipelines
     workspaces:
     - name: output
       workspace: shared-workspace
@@ -89,7 +89,7 @@ spec:
         - name: name
           value: buildah
         - name: namespace
-          namespace: openshift-pipelines
+          value: openshift-pipelines
       kind: Task
     params:
     - name: IMAGE
