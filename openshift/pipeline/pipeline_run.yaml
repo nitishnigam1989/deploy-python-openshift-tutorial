@@ -9,7 +9,7 @@ spec:
   - name: deployment-name
     value: hello-world
   - name: git-url
-    value: https://github.com/nitishnigam1989/deploy-python-openshift-tutorial
+    value: https://github.com/nitishnigam1989/deploy-python-openshift-tutorial.git
   - name: IMAGE
     value: image-registry.openshift-image-registry.svc:5000/$(context.pipelineRun.namespace)/hello-world
   - name: git-revision
