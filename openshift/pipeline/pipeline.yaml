@@ -82,7 +82,6 @@ spec:
   - name: build-image
     taskRef:
       resolver: cluster
-      name: buildah
       params:
         - name: kind
           value: task
@@ -90,7 +89,6 @@ spec:
           value: buildah
         - name: namespace
           value: openshift-pipelines
-      kind: Task
     params:
     - name: IMAGE
       value: $(params.IMAGE)
