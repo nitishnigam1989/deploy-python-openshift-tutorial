@@ -53,7 +53,7 @@ Below are the steps to perform build and deploy via Openshift Pipelines (using T
     `oc apply -f openshift/pipeline/apply_manifest_task.yaml`  
     `oc apply -f openshift/pipeline/update_deployment_task.yaml`  
 
-7. Create Openshift Pipeline
-    `oc apply -f openshift/pipeline/upipeline,yaml.yaml`
+7. Create Openshift Pipeline  
+    `oc apply -f openshift/pipeline/pipeline.yaml`
 
 
