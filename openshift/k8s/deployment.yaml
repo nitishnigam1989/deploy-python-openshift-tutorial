@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  namespace: nitish
+#  namespace: nitish
   name: test
   labels:
     app: hello-world
@@ -18,7 +18,7 @@ spec:
       containers:
         - name: test
           image: >-
-            image-registry.openshift-image-registry.svc:5000/nitish/nitish:1.0
+            image-registry.openshift-image-registry.svc:5000/$(context.pipelineRun.namespace)/hello-world-nitish
           ports:
             - containerPort: 5000
               protocol: TCP
