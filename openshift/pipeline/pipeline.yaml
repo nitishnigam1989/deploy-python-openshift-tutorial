@@ -46,6 +46,8 @@ spec:
     params:
     - name: IMAGE
       value: $(params.IMAGE)
+    - name: TLS_VERIFY
+      value: 'false'
     workspaces:
     - name: source
       workspace: shared-workspace
