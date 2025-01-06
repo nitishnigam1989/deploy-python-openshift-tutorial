@@ -1,5 +1,5 @@
 #FROM python:3-alpine
-FROM image-registry.openshift-image-registry.svc:5000/pipeline-tutorial/nitish:latest
+FROM image-registry.openshift-image-registry.svc:5000/pipeline-tutorial/python:latest
 #FROM alpine:latest
 #RUN apk add --no-cache python3 py3-pip \
 #    && pip3 install --upgrade pip
