@@ -23,10 +23,46 @@ spec:
     description: image to be build from the code
 
   tasks:
+#  - name: fetch-repository
+#    taskRef:
+#      name: git-clone
+#      kind: Task
+#    workspaces:
+#    - name: output
+#      workspace: shared-workspace
+#    params:
+#    - name: URL
+#      value: $(params.git-url)
+#    - name: SUBDIRECTORY
+#      value: ""
+#    - name: DELETE_EXISTING
+#      value: "true"
+#    - name: REVISION
+#      value: $(params.git-revision)
+#  - name: build-image
+#    taskRef:
+#      name: buildah
+#      kind: Task
+#    params:
+#    - name: IMAGE
+#      value: $(params.IMAGE)
+#    - name: TLS_VERIFY
+#      value: 'false'
+#    workspaces:
+#    - name: source
+#      workspace: shared-workspace
+#    runAfter:
+#    - fetch-repository
   - name: fetch-repository
     taskRef:
-      name: git-clone
-      kind: Task
+      resolver: cluster
+      params:
+        - name: kind
+          value: task
+        - name: name
+          value: git-clone
+        - name: namespace
+          namespace: openshift-pipelines
     workspaces:
     - name: output
       workspace: shared-workspace
@@ -41,7 +77,15 @@ spec:
       value: $(params.git-revision)
   - name: build-image
     taskRef:
+      resolver: cluster
       name: buildah
+      params:
+        - name: kind
+          value: task
+        - name: name
+          value: buildah
+        - name: namespace
+          namespace: openshift-pipelines
       kind: Task
     params:
     - name: IMAGE
